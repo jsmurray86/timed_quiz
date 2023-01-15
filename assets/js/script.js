@@ -1,6 +1,6 @@
 var testConnect = ["dogs", "cats"];
 console.log(testConnect);
-console.log("Hello world")
+console.log("Hello world");
 
 var startButton = document.querySelector(".start-button");
 var submitButton = document.querySelector(".submit-button");
@@ -32,6 +32,11 @@ var answerThree = [
   "C. Both A and B",
   "D. None of the above",
 ];
+
+showQuestionOne : function () {
+    
+}
+
 
 //start button
 
