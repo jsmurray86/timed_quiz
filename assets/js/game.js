@@ -3,6 +3,7 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
+const timerH2 = document.querySelector("#timer");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -53,10 +54,26 @@ let questions = [
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 4;
 
+let timer = 30;
+let setIntervalTimer;
+
+startTimer = () => {
+  setIntervalTimer = setInterval(() => {
+    if (timer > 0) {
+      timerH2.textContent = "timer: " + timer;
+      timer--;
+    } else {
+      timerH2.textContent = "Time's Up!";
+      clearInterval(setIntervalTimer);
+    }
+  }, 1000);
+};
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
+  startTimer();
+
   getNewQuestion();
 };
 
@@ -64,9 +81,10 @@ startGame = () => {
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    clearInterval(setIntervalTimer);
     localStorage.setItem("mostRecentScore", score);
     //keep track of score
-    return window.location.assign("/end.html");
+    return window.location.assign("end.html");
   }
   //incrementing question counter (eg. 1 of 4, 2 of 4, etc.)
   questionCounter++;
@@ -122,3 +140,5 @@ incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 };
+
+startGame();
