@@ -8,30 +8,19 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Take the quiz!</h1>
-      <p>
-        Test your knowledge of JavaScript with our quiz. Answer each question
-        and check your score.
-      </p>
-    </header>
-    <div>
-      <button class="start-button">Start!</button>
+    <div class="container">
+      <div id="home" class="flex-column flex-center">
+        <h1>Take our quiz!</h1>
+        <a href="game.html" class="btn">Play!</a>
+        <a href="/highscores.html" id="highschore-btn" class="btn"
+          >High Scores</a
+        >
+      </div>
     </div>
-    <div>
-      <button class="submit-button">Submit your answer</button>
-    </div>
-    <div>
-      <button class="score-button">Get your score</button>
-    </div>
-    <div><input type="text" />Enter your initials<br /></div>
-    <div>
-      <a href="https://www.interviewbit.com/javascript-mcq/">InterviewBit</a>
-      <p>provided our questions.</p>
-    </div>
+
     <footer>
-      <p>Bootcamp 2023</p>
+      <p>UCD Coding Boot Camp 2023</p>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/game.js"></script>
   </body>
 </html>
