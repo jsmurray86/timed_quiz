@@ -29,7 +29,7 @@ let questions = [
     choice2: "let",
     choice3: "Both 1 and 2",
     choice4: "None of the above",
-    answer: 2,
+    answer: 3,
   },
   {
     question:

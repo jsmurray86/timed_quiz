@@ -1,11 +1,12 @@
 const userName = document.querySelector('#userName')
 const saveScore = document.querySelector('#saveScore')
 const finalScore = document.querySelector('#finalScore')
-const mostRecentScore = localStorage.getItem('mostRecentScore')
+//const mostRecentScore = localStorage.getItem('mostRecentScore')
+const mostRecentScore = document.querySelector('#mostRecentScore')
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
-const MAX_HIGH_SCORE = 5
+const MAX_HIGH_SCORE = 4
 
 finalScore.innerText = mostRecentScore
 
@@ -27,7 +28,7 @@ saveHighScore = e => {
         return b.score - a.score 
     })
 
-    highScores.splice(5)
+    highScores.splice(4)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
 
