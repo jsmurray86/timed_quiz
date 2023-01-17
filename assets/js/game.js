@@ -13,7 +13,6 @@ let availableQuestions = [];
 
 let questions = [
   {
-    //check for how js identifies correct answer. by number?
     question: "JavaScript is a(n)__________ language.",
     choice1: "Object-oriented",
     choice2: "Object-based",
@@ -22,7 +21,6 @@ let questions = [
     answer: 1,
   },
   {
-    //check for how js identifies correct answer. by index?
     question:
       "Which of the following keywords is used to define a variable in JavaScript?",
     choice1: "var",
