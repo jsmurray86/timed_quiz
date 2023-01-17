@@ -3,16 +3,28 @@ const saveScore = document.querySelector("#saveScore");
 const finalScore = document.querySelector("#finalScore");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
 const MAX_HIGH_SCORE = 4;
 
-//finalScore.innerText = mostRecentScore;
+finalScore.innerText = mostRecentScore;
 
+function saveHighScore() {
+  var initials = userName.ariaValueMax.trim();
 
-userName.addEventListener("onclick", () => {
-  
-});
+  var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+  const score = {
+    score: finalScore,
+    name: initials,
+  };
+
+  highScores.push(score);
+
+  window.localStorage.setItem("highScores", JSON.stringify(highscores));
+}
+
+saveScore.onclick = saveHighScore;
+
+userName.addEventListener("onclick", () => {});
 
 saveHighScore = (e) => {
   e.preventDefault();
@@ -31,9 +43,4 @@ saveHighScore = (e) => {
   highScores.splice(4);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
-
 };
-
-
-
-
