@@ -122,6 +122,10 @@ choices.forEach((choice) => {
     if (classToApply === "correct") {
       //increases or increments correct score by 100 pts per line 52
       incrementScore(SCORE_POINTS);
+    } else {
+      //loses a second for each incorrect answer
+      timerH2.textContent = "timer: " + timer;
+      timer--;
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
