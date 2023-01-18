@@ -8,6 +8,8 @@ const MAX_HIGH_SCORE = 4;
 finalScore.innerText = mostRecentScore;
 
 function saveHighScore() {
+  event.preventDefault();
+  console.log("saveHighScore function works");
   var initials = userName.ariaValueMax.trim();
 
   var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -22,11 +24,11 @@ function saveHighScore() {
   window.localStorage.setItem("highScores", JSON.stringify(highscores));
 }
 
-saveScore.onclick = saveHighScore;
+saveScore.addEventListener("click", saveHighScore);
 
 userName.addEventListener("onclick", () => {});
 
-saveHighScore = (e) => {
+/*saveHighScore = (e) => {
   e.preventDefault();
 
   const score = {
@@ -43,4 +45,4 @@ saveHighScore = (e) => {
   highScores.splice(4);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
-};
+};*/
